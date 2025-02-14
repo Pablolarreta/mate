@@ -1,0 +1,175 @@
+:root {
+    --color-white: #ffffff;
+    --bg-dark: #0f0c29;
+    --bg-dark-alt: rgba(0, 0, 0, 0.8);
+}
+
+/* Animación del fondo */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(-45deg, #1e3c72, #2a5298, #0f2027, #203a43);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 10s ease infinite;
+    color: var(--color-white);
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.container {
+    margin: 16px auto;
+    width: 90%;
+}
+
+/* NAVBAR */
+.nav-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: var(--bg-dark);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* LOGO */
+.nav-imagen {
+    width: 50px;
+}
+
+/* MENÚ */
+.nav-menu {
+    display: flex;
+    gap: 15px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-menu li {
+    padding: 5px;
+}
+
+.nav-menu a:hover {
+    border-bottom: 2px solid var(--color-white);
+}
+
+/* CONTENEDOR DERECHO */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* SEARCH */
+.nav-search input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    width: 150px;
+}
+
+/* MENÚ HAMBURGUESA */
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    background: var(--bg-dark-alt);
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1068px) {
+    .nav-main {
+        padding: 10px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        background: var(--bg-dark-alt);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+        transition: left 0.4s ease-in-out;
+    }
+
+    .nav-menu.show {
+        left: 0;
+    }
+
+    .nav-right {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-search input {
+        width: 120px;
+    }
+    
+}
+
+.responsive-img {
+    max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+    height: auto; /* Mantiene la proporción */
+    display: block; /* Evita espacios extra */
+    margin: 0 auto; /* Centra la imagen */
+    margin-top: 83px;
+
+    
+}
+
+
+@media (max-width: 900px) {
+
+    .alinear{
+        margin-bottom: 8px;
+    }
+
+    .cientifico{
+       flex-direction: column;
+        align-items: center;
+              
+    }
+}
+
+.alinear{
+    width: 150px;
+    height: 100px;
+   
+}
+
+.cientifico{
+    display: flex;
+    justify-content: space-between;
+    margin: 100px auto;
+    width: 90%; 
+    background-color:  #7668f2;
+    border-radius: 5px; 
+    margin-top: 90px;      
+} 

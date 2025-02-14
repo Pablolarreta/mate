@@ -1,0 +1,129 @@
+:root {
+    --color-white: #ffffff;
+    --bg-dark: #0f0c29;
+    --bg-dark-alt: rgba(0, 0, 0, 0.8);
+    --btn-color: #ff9800;
+    --btn-hover: #e68900;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to right, #24243e, #302b63, var(--bg-dark));
+    color: var(--color-white);
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin: 16px auto;
+    width: 90%;
+}
+
+/* NAVBAR */
+.nav-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: var(--bg-dark);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* LOGO */
+.nav-imagen {
+    width: 50px;
+}
+
+/* MENÚ */
+.nav-menu {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 0;
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+.nav-menu a {
+    color: var(--color-white);
+    font-size: 16px;
+    text-decoration: none;
+}
+
+/* BOTÓN INICIO */
+.btn-inicio {
+    font-size: 16px; /* Misma fuente que las materias */
+    font-weight: normal; /* Para que coincida con el resto */
+    padding: 5px 10px; /* Ajuste para que no sea más grande */
+    background: var(--btn-color);
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-inicio:hover {
+    background: var(--btn-hover);
+}
+
+
+/* CONTENEDOR DERECHO */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* SEARCH */
+.nav-search input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    width: 150px;
+}
+
+/* MENÚ HAMBURGUESA */
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    background: var(--bg-dark-alt);
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1086px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        background: var(--bg-dark-alt);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+        transition: left 0.4s ease-in-out;
+        display: flex;
+        justify-content: center; /* 🔹 Centra verticalmente en pantallas pequeñas */
+    }
+
+    .nav-menu.show {
+        left: 0;
+    } 
+}
+
+.nav-menu a:not(.btn-inicio):hover {
+    border-bottom: 2px solid var(--color-white);
+    transition: border-bottom 0.3s ease-in-out;
+}
